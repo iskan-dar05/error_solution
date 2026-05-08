@@ -5,8 +5,14 @@ from app.middlewares.auth_middleware import get_current_user
 
 router = APIRouter()
 
-@router.get("chats/")
-def test():
+@router.get("/chats")
+async get_chats(payload: dict = Depends(get_current_user()):
+	try:
+		user_id = payload["sub"]
+		response = supabase.table("chats").select("*").eq("user_id", user_id)
+		return {
+			message
+
 	return {"message": "ok"}
 
 
