@@ -52,7 +52,7 @@ export default function SignupScreen() {
 
       if (signUp.status === 'complete') {
         await setActive({ session: signUp.createdSessionId })
-        router.replace('(drawer)')
+        router.replace('/(drawer)')
       }
     } catch (err) {
       setError(err)

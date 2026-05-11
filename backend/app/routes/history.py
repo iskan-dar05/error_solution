@@ -1,26 +1,34 @@
 from fastapi import APIRouter, HTTPException, Depends
 from app.db.database import supabase
 from app.middlewares.auth_middleware import get_current_user
+from app.schemas.chat import ChatResponse
+from typing import List
 
 
 router = APIRouter()
 
-@router.get("/chats")
-async get_chats(payload: dict = Depends(get_current_user()):
+@router.get("/chats", response_model=List[ChatResponse])
+async def get_chats(user: dict = Depends(get_current_user)):
 	try:
-		user_id = payload["sub"]
-		response = supabase.table("chats").select("*").eq("user_id", user_id)
-		return {
-			message
+		user_id = user["id"]
+		print("USER_ID: ", user_id)
+		response = supabase.table("chat").select("*").eq("user_id", user_id).execute()
+		print("RESPONSE from HISTORY: ", response)
+		if response:
+			return response.data
+			
+	except Exception as e:
+		print(e)
+		raise HTTPException(status_code=500, detail=str(e))
 
-	return {"message": "ok"}
 
 
 
-@router.get("/chat/{id}")
+@router.get("/chat/{chat_id}", response_model=ChatResponse)
 async def get_chat(
-	payload: dict = Depends(get_current_user), 
-	id: str
+	chat_id: str,
+	payload: dict = Depends(get_current_user)
+	
 	):
 	try:
 		response = supabase.table("chat").select("*").eq("id", id).limit(1).execute()

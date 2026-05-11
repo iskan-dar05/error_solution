@@ -17,11 +17,11 @@ function InitialLayout() {
 
     const inAuthGroup = segments[0] === '(auth)';
     router.replace('/(drawer)');
-    // if (isSignedIn && inAuthGroup) {
-    //   router.replace('/(drawer)');
-    // } else if (!isSignedIn) {
-    //   router.replace('/(auth)');
-    // }
+    if (isSignedIn && inAuthGroup) {
+      router.replace('/(drawer)');
+    } else if (!isSignedIn) {
+      router.replace('/(auth)');
+    }
   }, [isSignedIn, isLoaded]);
 
   return (

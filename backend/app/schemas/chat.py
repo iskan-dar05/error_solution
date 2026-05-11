@@ -3,5 +3,5 @@ from datetime import datetime
 
 class ChatResponse(BaseModel):
 	id: str
-	user_id: str
+	title: str
 	created_at: datetime

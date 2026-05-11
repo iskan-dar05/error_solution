@@ -12,6 +12,10 @@ CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
 CLERK_ISSUER = os.getenv("CLERK_ISSUER")
 CLERK_JWKS_URL = os.getenv("CLERK_JWKS_URL")
 
+print("CLERK_SECRET_KEY", CLERK_SECRET_KEY)
+print("CLERK_ISSUER", CLERK_ISSUER)
+print("CLERK_JWKS_URL", CLERK_JWKS_URL)
+
 jwks_cache = None
 
 
@@ -33,6 +37,8 @@ async def get_jwks():
 async def verify_clerk_token(token: str):
     jwks = await get_jwks()
 
+    print("GET JWKS SUCESS", jwks)
+
     try:
         payload = jwt.decode(
             token,
@@ -41,8 +47,10 @@ async def verify_clerk_token(token: str):
             audience=None,
             issuer=CLERK_ISSUER
         )
+        print("PAYLOAD FROM security.py", payload)
         return payload
-    except Exception:
+    except Exception as e:
+        print("EXCEPTIOIN FROM SECURITY: ", e)
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid Clerk token"
