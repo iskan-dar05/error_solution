@@ -20,3 +20,48 @@ The project consists of a React Native Android app built with Expo and a FastAPI
 ⚡ Fast semantic retrieval pipeline
 
 ## 🏗️ Project Structure
+
+error_solution/
+│
+├── ErrorSolution/
+│   ├── app/
+│   │   ├── (auth)/
+│   │   ├── (drawer)/
+│   │   └── _layout.tsx
+│   │
+│   ├── utils/
+│   ├── global.css
+│   ├── tailwind.config.js
+│   ├── metro.config.js
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── babel.config.js
+│   ├── app.json
+│   ├── expo-env.d.ts
+│   ├── nativewind-env.d.ts
+│   └── README.md
+│
+├── backend/
+│   ├── app/
+│   │   ├── core/
+│   │   │   ├── config.py
+│   │   │   └── security.py
+│   │   │
+│   │   ├── db/
+│   │   ├── middlewares/
+│   │   ├── routes/
+│   │   │   ├── chat.py
+│   │   │   └── history.py
+│   │   │
+│   │   ├── schemas/
+│   │   ├── utils/
+│   │   └── data/
+│   │       ├── error.index
+│   │       └── metadata.json
+│   │
+│   ├── main.py
+│   ├── requirements.txt
+│   └── __pycache__/
+│
+├── ErrorSolution.ipynb
+└── README.md
