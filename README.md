@@ -7,7 +7,7 @@ The project consists of a React Native Android app built with Expo and a FastAPI
 
 
 
-##✨ Features
+## ✨ Features
 📱 React Native Android application
 ⚡ FastAPI backend API
 🔐 Authentication with Clerk
@@ -18,3 +18,5 @@ The project consists of a React Native Android app built with Expo and a FastAPI
 💬 Chat-based developer experience
 🧾 Chat history saving
 ⚡ Fast semantic retrieval pipeline
+
+## 🏗️ Project Structure
