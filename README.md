@@ -20,7 +20,7 @@ The project consists of a React Native Android app built with Expo and a FastAPI
 ⚡ Fast semantic retrieval pipeline
 
 ## 🏗️ Project Structure
-
+```
 error_solution/
 │
 ├── ErrorSolution/
@@ -65,3 +65,4 @@ error_solution/
 │
 ├── ErrorSolution.ipynb
 └── README.md
+```
