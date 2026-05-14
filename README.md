@@ -66,3 +66,26 @@ error_solution/
 ├── ErrorSolution.ipynb
 └── README.md
 ```
+
+## 🧠 System Architecture
+
+```
+React Native Mobile App
+            │
+            ▼
+       FastAPI Backend
+            │
+            ├── Clerk Authentication
+            │
+            ├── Generate Error Embeddings
+            │      using Sentence Transformers
+            │
+            ├── Search Similar Errors
+            │      using FAISS Index
+            │
+            ├── Retrieve Metadata
+            │      from metadata.json
+            │
+            └── Return Related Fixes
+
+```
