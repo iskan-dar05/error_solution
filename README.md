@@ -89,3 +89,13 @@ React Native Mobile App
             └── Return Related Fixes
 
 ```
+
+## ⚙️ Tech Stack
+Frontend
+React Native
+Expo
+TypeScript
+NativeWind
+Axios
+
+
