@@ -280,5 +280,5 @@ The application uses Supabase for:
 - 🌐 Multi-platform support
 - 📊 Analytics dashboard
 - 💬 Real-time AI assistant
-☁️ Cloud vector database
-🧾 Auto error categorization
+- ☁️ Cloud vector database
+- 🧾 Auto error categorization
